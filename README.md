@@ -1,1 +1,466 @@
-# bullyngnaoebrincadeira
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Respeito em Ação | Combate ao Bullying</title>
+    <meta name="description" content="Site informativo sobre bullying: tipos, consequências, prevenção e fontes oficiais de informação.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background: linear-gradient(145deg, #f8f9ff 0%, #eef2f7 100%);
+            color: #1e2a3e;
+            line-height: 1.5;
+            scroll-behavior: smooth;
+        }
+
+        /* HEADER E NAVEGAÇÃO */
+        header {
+            background: #0b2b40;
+            color: white;
+            padding: 1.2rem 2rem;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-container {
+            max-width: 1300px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo h1 {
+            font-size: 1.8rem;
+            letter-spacing: -0.5px;
+            font-weight: 700;
+            background: linear-gradient(135deg, #ffcd7e, #ffb347);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            text-shadow: none;
+        }
+
+        .logo p {
+            font-size: 0.8rem;
+            color: #cbd5e6;
+            font-weight: 500;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: #f0f3f8;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.2s;
+            font-size: 1rem;
+            border-bottom: 2px solid transparent;
+            padding-bottom: 4px;
+        }
+
+        nav a:hover {
+            border-bottom-color: #ffb347;
+            color: #ffcd7e;
+        }
+
+        /* MAIN */
+        main {
+            max-width: 1300px;
+            margin: 2rem auto;
+            padding: 0 1.5rem;
+        }
+
+        /* HERO SECTION */
+        .hero {
+            background: linear-gradient(120deg, #1e3c4c 0%, #10313f 100%);
+            border-radius: 2rem;
+            padding: 3rem 2rem;
+            color: white;
+            margin-bottom: 3rem;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+            text-align: center;
+        }
+
+        .hero h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: 800;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+
+        .hero small {
+            display: block;
+            margin-top: 1.5rem;
+            font-style: italic;
+            font-size: 0.85rem;
+        }
+
+        /* CARDS DE TIPOS */
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin: 2rem 0 1rem;
+            border-left: 6px solid #ffb347;
+            padding-left: 1rem;
+            color: #0b2b40;
+        }
+
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .card {
+            background: white;
+            border-radius: 1.5rem;
+            padding: 1.8rem;
+            transition: transform 0.25s ease, box-shadow 0.25s;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+            border: 1px solid #e2e8f0;
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 30px -12px rgba(0,0,0,0.15);
+        }
+
+        .card h3 {
+            font-size: 1.6rem;
+            margin-bottom: 0.75rem;
+            color: #1f5e6e;
+        }
+
+        .card p {
+            color: #2d3e50;
+        }
+
+        /* estatísticas e consequências */
+        .stats-consequences {
+            background: #ffffffcc;
+            backdrop-filter: blur(2px);
+            border-radius: 2rem;
+            padding: 1.8rem;
+            margin: 2rem 0;
+            background: #fef9e6;
+            border-left: 8px solid #e67e22;
+        }
+
+        .stats-consequences h3 {
+            font-size: 1.6rem;
+            color: #b85c00;
+            margin-bottom: 1rem;
+        }
+
+        .flex-stats {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: space-between;
+            margin-top: 1rem;
+        }
+
+        .stat-box {
+            flex: 1;
+            min-width: 200px;
+            background: white;
+            padding: 1.2rem;
+            border-radius: 1.2rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        /* COMO AJUDAR */
+        .help-list {
+            background: #eaf7ff;
+            border-radius: 1.8rem;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+
+        .help-list ul {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1rem;
+            list-style: none;
+        }
+
+        .help-list li {
+            background: white;
+            padding: 1rem 1.2rem;
+            border-radius: 3rem;
+            font-weight: 500;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+
+        .help-list li::before {
+            content: "✓";
+            background: #2c7a4d;
+            color: white;
+            font-weight: bold;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+        }
+
+        /* seção de fontes (onde tiramos as informações) */
+        .sources-section {
+            background: #1e2f3a;
+            color: #f0f3f8;
+            border-radius: 1.8rem;
+            padding: 2rem;
+            margin: 2.5rem 0 1.5rem;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
+
+        .sources-section h3 {
+            font-size: 1.8rem;
+            color: #ffcd7e;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .sources-section ul {
+            list-style: none;
+            margin-top: 1rem;
+        }
+
+        .sources-section li {
+            margin-bottom: 0.8rem;
+            padding-left: 1.2rem;
+            border-left: 3px solid #ffb347;
+        }
+
+        .sources-section a {
+            color: #ffcd7e;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .sources-section a:hover {
+            text-decoration: underline;
+            color: white;
+        }
+
+        .sources-note {
+            margin-top: 1rem;
+            font-size: 0.85rem;
+            font-style: italic;
+            background: #00000030;
+            padding: 0.8rem;
+            border-radius: 1rem;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #0b2b40;
+            color: #b9d0e0;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 2rem;
+            font-size: 0.85rem;
+        }
+
+        footer a {
+            color: #ffcd7e;
+            text-decoration: none;
+        }
+
+        /* botão de apoio rápido */
+        .btn-support {
+            display: inline-block;
+            background: #ffb347;
+            color: #1e2a3e;
+            padding: 0.6rem 1.4rem;
+            border-radius: 3rem;
+            font-weight: bold;
+            margin-top: 1rem;
+            text-decoration: none;
+            transition: 0.2s;
+        }
+
+        .btn-support:hover {
+            background: #ff9f1a;
+            transform: scale(1.02);
+        }
+
+        @media (max-width: 700px) {
+            .hero h2 {
+                font-size: 1.8rem;
+            }
+            .header-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            nav ul {
+                justify-content: center;
+                gap: 1rem;
+            }
+            .section-title {
+                font-size: 1.6rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="header-container">
+        <div class="logo">
+            <h1>💙 Respeito em Ação</h1>
+            <p>informação transforma · bullying nunca mais</p>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#tipos">Tipos</a></li>
+                <li><a href="#consequencias">Impactos</a></li>
+                <li><a href="#ajuda">Como agir</a></li>
+                <li><a href="#fontes">Fontes</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <div class="hero">
+        <h2>Bullying: mais do que brincadeira, é violência silenciosa</h2>
+        <p>O bullying afeta milhões de crianças, adolescentes e adultos em todo o mundo. Compreender, identificar e agir são os primeiros passos para construir ambientes mais seguros e respeitosos.</p>
+        <small>Dados da UNESCO, IBGE e organizações globais apontam que 1 em cada 3 estudantes já sofreu bullying em algum momento da vida escolar.</small>
+        <a href="#ajuda" class="btn-support">🌸 Quero ajudar ou pedir apoio</a>
+    </div>
+
+    <!-- SEÇÃO TIPOS DE BULLYING -->
+    <h2 class="section-title" id="tipos">📌 Formas de Bullying</h2>
+    <div class="cards-grid">
+        <div class="card">
+            <h3>😔 Verbal</h3>
+            <p>Apelidos ofensivos, insultos, humilhações, xingamentos e comentários preconceituosos. É o tipo mais comum e muitas vezes normalizado, mas causa danos profundos à autoestima.</p>
+        </div>
+        <div class="card">
+            <h3>💥 Físico</h3>
+            <p>Empurrões, socos, chutes, danos a pertences pessoais e agressões corporais. A violência física é mais visível, mas nem sempre denunciada por medo.</p>
+        </div>
+        <div class="card">
+            <h3>📱 Cyberbullying</h3>
+            <p>Agressões por meios digitais: redes sociais, mensagens, e-mails, exclusão em grupos virtuais, difamação e compartilhamento de imagens sem consentimento. Ocorre 24/7 e atinge a vítima até em casa.</p>
+        </div>
+        <div class="card">
+            <h3>🤐 Psicológico / Social</h3>
+            <p>Isolamento intencional, manipulação, fofocas maliciosas, ignorar deliberadamente e excluir alguém de grupos. Também chamado de bullying relacional, é sutil e devastador.</p>
+        </div>
+        <div class="card">
+            <h3>🏷️ Preconceituoso</h3>
+            <p>Ataques baseados em raça, cor, religião, orientação sexual, identidade de gênero ou deficiência. Um dos tipos mais graves, pois reforça discriminação estrutural.</p>
+        </div>
+        <div class="card">
+            <h3>🎭 Sexual</h3>
+            <p>Comentários obscenos, gestos, toques indesejados, assédio ou exposição a conteúdo sexual. É crime e deve ser tratado com máxima seriedade.</p>
+        </div>
+    </div>
+
+    <!-- CONSEQUÊNCIAS E ESTATÍSTICAS -->
+    <div class="stats-consequences" id="consequencias">
+        <h3>⚠️ Consequências reais e alarmantes</h3>
+        <div class="flex-stats">
+            <div class="stat-box">
+                <strong style="font-size: 1.6rem; color:#c4450c;">✔️</strong>
+                <p>Vítimas de bullying têm <strong>2 a 3 vezes mais chances</strong> de desenvolver ansiedade, depressão e ideação suicida. (Fonte: CDC / OMS)</p>
+            </div>
+            <div class="stat-box">
+                <strong style="font-size: 1.6rem; color:#c4450c;">📉</strong>
+                <p>Queda no desempenho escolar, evasão escolar e isolamento social são comuns entre alvos de bullying recorrente.</p>
+            </div>
+            <div class="stat-box">
+                <strong style="font-size: 1.6rem; color:#c4450c;">🧠</strong>
+                <p>Testemunhas também sofrem impactos: sensação de impotência, estresse e normalização da violência.</p>
+            </div>
+        </div>
+        <p style="margin-top: 1.2rem; font-weight: 500;">🔍 Dados da UNESCO (2019): aproximadamente 32% dos estudantes em todo o mundo relataram ter sofrido bullying físico ou psicológico nos últimos meses. No Brasil, Pesquisa Nacional de Saúde do Escolar (PeNSE) aponta que mais de 23% dos alunos já foram humilhados por colegas.</p>
+    </div>
+
+    <!-- COMO AJUDAR / PREVENÇÃO -->
+    <h2 class="section-title" id="ajuda">🤝 O que fazer? Prevenção e Ação</h2>
+    <div class="help-list">
+        <ul>
+            <li><strong>Converse e acolha:</strong> Escute sem julgar, acredite na vítima e mostre apoio.</li>
+            <li><strong>Denuncie:</strong> Informe professores, coordenação escolar, conselho tutelar ou disque 100.</li>
+            <li><strong>Intervenção de testemunhas:</strong> Não seja omisso; apoiar a vítima e se posicionar reduz o ciclo de violência.</li>
+            <li><strong>Escolas com protocolos:</strong> Programas antibullying, rodas de conversa e mediação de conflitos funcionam.</li>
+            <li><strong>Registre provas:</strong> Em casos de cyberbullying, tire prints, salve mensagens e bloqueie agressores.</li>
+            <li><strong>Busque apoio psicológico:</strong> Terapia e grupos de apoio ajudam na recuperação da autoestima.</li>
+        </ul>
+        <p style="margin-top: 1.5rem;"><strong>📢 Cartilha essencial:</strong> Leis contra bullying: Lei nº 13.185/2015 (Programa de Combate à Intimidação Sistemática) e Lei 13.663/2018 que inclui prevenção ao bullying no ambiente escolar. Cyberbullying pode ser enquadrado como crime de calúnia, difamação ou injúria (Código Penal).</p>
+    </div>
+
+    <!-- ONDE TIRAMOS TODAS AS INFORMAÇÕES (FONTES) -->
+    <div class="sources-section" id="fontes">
+        <h3>📚 Fontes confiáveis – de onde tiramos as informações</h3>
+        <p>Todo o conteúdo apresentado neste site foi embasado em estudos, pesquisas e diretrizes de organizações oficiais e instituições acadêmicas reconhecidas. A transparência das fontes é essencial para combater a desinformação.</p>
+        <ul>
+            <li><strong>UNESCO:</strong> Relatório "Behind the numbers: ending school violence and bullying" (2019) – Dados globais sobre prevalência de bullying.</li>
+            <li><strong>Organização Mundial da Saúde (OMS) / CDC:</strong> Estudos sobre saúde mental, consequências do bullying e prevenção.</li>
+            <li><strong>IBGE – Pesquisa Nacional de Saúde do Escolar (PeNSE):</strong> Indicadores brasileiros sobre violência entre pares, edições 2015/2019.</li>
+            <li><strong>Ministério da Educação / Ministério dos Direitos Humanos:</strong> Campanhas e diretrizes nacionais contra o bullying, canal de denúncia Disque 100.</li>
+            <li><strong>Associação Brasileira de Psicologia Escolar (ABRAPEE):</strong> Materiais sobre impactos emocionais e intervenções escolares.</li>
+            <li><strong>Leis brasileiras:</strong> Lei nº 13.185/2015 (Programa de Combate ao Bullying) e Lei 13.663/2018. Projeto Escola sem Bullying.</li>
+            <li><strong>Cartilhas da “SaferNet Brasil”:</strong> orientações sobre cyberbullying e direitos digitais.</li>
+        </ul>
+        <div class="sources-note">
+            💡 Verificamos também dados de estudos longitudinais publicados no "Journal of Adolescent Health" e relatórios do "Committee for Children". As informações refletem consenso científico e recomendações de especialistas.
+        </div>
+        <p style="margin-top: 1rem; font-size: 0.9rem;">🔗 Para saber mais acesse os sites oficiais: <a href="https://www.unicef.org/brazil/bullying" target="_blank" rel="noopener">UNICEF Brasil - Bullying</a> | <a href="https://www.gov.br/mdh/pt-br" target="_blank" rel="noopener">Ministério dos Direitos Humanos</a> | <a href="https://new.safernet.org.br/" target="_blank" rel="noopener">SaferNet</a></p>
+    </div>
+
+    <!-- bloco extra de dados e curiosidades sobre o tema -->
+    <div style="background: #fff3e0; border-radius: 1.5rem; padding: 1.6rem; margin: 1.5rem 0; border: 1px solid #ffddb0;">
+        <h3 style="display: flex; gap: 0.5rem; color: #a34e00;">🧠 Fatos importantes que muita gente desconhece</h3>
+        <ul style="margin-left: 1.5rem; margin-top: 0.8rem;">
+            <li>Mais de 60% das vítimas de bullying não relatam o ocorrido por vergonha ou medo de represálias. (Fonte: Plan International)</li>
+            <li>Programas de educação socioemocional nas escolas reduzem em até 30% os índices de bullying.</li>
+            <li>Cyberbullying aumentou cerca de 40% durante o período de ensino remoto (pesquisas 2020-2022).</li>
+            <li>A prática de "bullying reverso" (quando a vítima reage agredindo) não resolve e pode piorar a dinâmica; o correto é sempre buscar apoio adulto e mediação.</li>
+        </ul>
+        <p style="margin-top: 12px;"><strong>🌱 O papel da comunidade:</strong> Juntos, famílias, escolas e sociedade podem criar cultura de paz. Pequenos gestos de empatia mudam vidas.</p>
+    </div>
+</main>
+
+<footer>
+    <p>💙 <strong>Respeito em Ação</strong> — site informativo sem fins lucrativos desenvolvido para conscientizar sobre bullying.</p>
+    <p>Todo o conteúdo foi baseado em fontes oficiais citadas acima. Se você ou alguém que conhece está passando por bullying, procure ajuda: converse com um adulto de confiança, ligue 100 (Direitos Humanos) ou 180 (Central de Atendimento à Mulher, também para casos de violência).</p>
+    <p style="margin-top: 10px;">&copy; 2025 | Informação salva vidas — compartilhe conhecimento, combata o bullying.</p>
+    <p><a href="#">⬆ Voltar ao topo</a></p>
+</footer>
+</body>
+</html>
